@@ -12,7 +12,6 @@ html {
 
 body {
   font-family: garamond;
-  color: rgb(95, 90, 90);
   margin: 0;
   display: grid;
   justify-content: center;
@@ -20,37 +19,46 @@ body {
   min-width: 400px;
 }
 
-.wrap {
+.wrapper {
   width: 60%;
   box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px;
-  display: grid;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
   gap: 20px;
-  margin: 20px 0;
+  margin: 50px 0;
+  padding: 50px 0;
 }
 
-.header {
-  display: grid;
-  grid-auto-flow: column;
-  grid-template-columns: 1fr;
-  padding: 20px 8%;
+.title {
+  display: flex;
+  gap: 40px;
+}
+
+.avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 5px #5f5a5a;
 }
 
 .name {
-  display: grid;
-  align-content: start;
-  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.my_photo {
-  max-width: 250px;
-  border-radius: 2px;
-  box-shadow: 1px 1px 10px #5f5a5a;
+header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 6%;
 }
 
 section {
   display: grid;
   border-bottom: 1px solid black;
-  padding: 10px 8%;
+  padding: 10px 6%;
 }
 
 section:last-child {
@@ -103,12 +111,16 @@ li {
 
 .contacts a {
   text-decoration: none;
-  color: rgb(95, 90, 90);
+  color: black;
   white-space: nowrap;
 }
 
-a:hover {
-  color: blue;
+.contacts {
+  background-color: #f0f0f0;
+}
+
+.contacts a:hover {
+  color: #66baaa;
   transition: all 0.2s ease 0s;
 }
 
@@ -128,29 +140,35 @@ a:hover {
 }
 
 @media (max-width: 1300px) {
-  .wrap {
+  .wrapper {
     width: 80%;
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 800px) {
   .contacts ul {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 600px) {
-  .my_photo {
-    max-width: 160px;
-  }
-
-  .wrap {
+  .wrapper {
     width: 100%;
     margin: 0;
+    border-radius: 0;
+  }
+
+  .avatar {
+    width: 150px;
+    height: 150px;
   }
 }
 
 @media (max-width: 450px) {
+  .title {
+    gap: 20px;
+  }
+
   h3 {
     justify-self: center;
     width: 80%;
